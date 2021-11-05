@@ -1,13 +1,10 @@
 package com.example.skullkingblock;
 
-import androidx.databinding.BaseObservable;
-import androidx.databinding.Bindable;
-
 public class Game {
-    private Player[] players;
+    private final Player[] players;
     private int round;
-    private String[][] pointTable;
-    private boolean riskyZero;
+    private final String[][] pointTable;
+    private final boolean riskyZero;
 
     public Game(int playerNumber, boolean risky) {
         this.players = new Player[playerNumber];
