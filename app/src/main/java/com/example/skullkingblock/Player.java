@@ -1,5 +1,7 @@
 package com.example.skullkingblock;
 
+import androidx.annotation.NonNull;
+
 public class Player {
     private String name;
     private int points;
@@ -20,7 +22,12 @@ public class Player {
         this.wasRiskyZeroUsed= false;
     }
 
+    /**
+     * get a string to represent the player
+     * @return the name of the player
+     */
     @Override
+    @NonNull
     public String toString(){
         return this.name;
     }
@@ -35,6 +42,7 @@ public class Player {
         this.name = newName;
     }
 
+    //TODO: currently use bonus to handle risky zero games. Remove, after risky zero is implemented
     /**
      * Calculate the players points using his other attributes, the current round number and the
      * bonus points
@@ -45,10 +53,10 @@ public class Player {
         if(this.call == 0){
             int pointChange = this.riskyZero ? ((round * 10) + 50) : (round * 10);
             if(this.stitches == 0){
-                this.points = this.points + pointChange;
+                this.points = this.points + (pointChange + bonus);
             }
             else {
-                this.points = this.points - pointChange;
+                this.points = this.points - (pointChange + bonus);
             }
         }
         else{
