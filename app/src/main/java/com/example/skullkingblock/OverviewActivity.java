@@ -6,8 +6,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
-import org.w3c.dom.Text;
-
 public class OverviewActivity extends AppCompatActivity {
 
     private Game game;
@@ -55,11 +53,9 @@ public class OverviewActivity extends AppCompatActivity {
      * set the names of the players at the top of the table
      */
     private void setNames(){
-        for ( Player player : this.game.getPlayers()){
-            int i = 0;
+        for (int i = 0; i < this.game.getPlayers().length; i++){
             TextView view = findViewById(Constants.tableHeader[i]);
-            view.setText(player.toString());
-            i++;
+            view.setText(this.game.getPlayers()[i].toString());
         }
     }
 
@@ -71,7 +67,7 @@ public class OverviewActivity extends AppCompatActivity {
             Integer[] row = Constants.rows[i];
             for(int j = 0; j < this.game.getPlayerNumber(); j++){
                 TextView view = findViewById(row[j]);
-                view.setText(this.game.getPointTable()[i][j]);
+                view.setText(this.game.getPointTable()[j][i]);
             }
         }
     }

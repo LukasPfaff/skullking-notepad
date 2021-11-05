@@ -106,11 +106,10 @@ public class Game {
      * Fill the Scoreboard.
      */
     public void nextRound(){
-        for(Player player : players){
-            int i = 0;
+        for(int i = 0; i < this.players.length; i++){
+            Player player = this.players[i];
             pointTable[i][this.round-1] = player.getCall() + "|" + player.getPoints();
             player.resetPlayer();
-            i++;
         }
         if (this.round < 10) this.round++;
     }

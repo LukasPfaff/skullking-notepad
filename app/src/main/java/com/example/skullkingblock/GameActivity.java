@@ -225,13 +225,6 @@ public class GameActivity extends AppCompatActivity {
             return;
         }
 
-        // end game after round 10, show scoreboard
-        if (game.getRound() == 10) {
-            game.nextRound();
-            this.showOverview(true);
-            return;
-        }
-
         // prepare going to next round
         int players = game.getPlayerNumber();
         for(int i = 0; i < players; i++){
@@ -270,6 +263,13 @@ public class GameActivity extends AppCompatActivity {
         view.setEnabled(false);
         view = findViewById(R.id.confirmCallsButton);
         view.setEnabled(true);
+
+        // end game after round 10, show scoreboard
+        if (game.getRound() == 10) {
+            game.nextRound();
+            this.showOverview(true);
+            return;
+        }
 
         // set the game state to next round
         game.nextRound();
