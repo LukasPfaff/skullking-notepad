@@ -32,6 +32,9 @@ public class SetPlayersActivity extends AppCompatActivity {
         this.binding.setSetPlayerActivity(this);
     }
 
+    /**
+     * Start the game and end this activity
+     */
     public void sendResults(){
         Intent intent = new Intent(this, GameActivity.class);
 
