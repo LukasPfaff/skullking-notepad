@@ -229,6 +229,7 @@ public class GameActivity extends AppCompatActivity {
         if (game.getRound() == 10) {
             game.nextRound();
             this.showOverview(true);
+            return;
         }
 
         // prepare going to next round
