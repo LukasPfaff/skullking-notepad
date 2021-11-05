@@ -40,6 +40,11 @@ public class Game {
         return players[i].toString();
     }
 
+    /**
+     * Return the points of a player
+     * @param i his position at the table
+     * @return the points he has
+     */
     public int getPlayerPoints(int i){
         return players[i].getPoints();
     }
@@ -60,10 +65,37 @@ public class Game {
         return this.round;
     }
 
+    /**
+     * Get the array containing the players in the correct order
+     * @return players
+     */
+    public Player[] getPlayers(){
+        return this.players;
+    }
+
+    /**
+     * Get the scoreboard
+     * @return scoreboard
+     */
+    public String[][] getPointTable(){
+        return this.pointTable;
+    }
+
+    /**
+     * Set the call of a player
+     * @param call his call
+     * @param playerIndex his position at the table
+     */
     public void setCall(int call, int playerIndex){
         players[playerIndex].setCall(call);
     }
 
+    /**
+     * set the points for a player
+     * @param stitches number of stitches he made that round
+     * @param bonus bonus points he got
+     * @param playerIndex his position at the table
+     */
     public void setPoints(int stitches, int bonus, int playerIndex){
         players[playerIndex].setStitches(stitches);
         players[playerIndex].setPoints(this.round, bonus);
@@ -80,6 +112,6 @@ public class Game {
             player.resetPlayer();
             i++;
         }
-        this.round++;
+        if (this.round < 10) this.round++;
     }
 }
