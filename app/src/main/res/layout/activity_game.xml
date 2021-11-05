@@ -1,0 +1,877 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable name="gameActivity" type="com.example.skullkingblock.GameActivity" />
+    </data>
+
+    <ScrollView
+        android:id="@+id/gameScreenScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/nameLabelPlayer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:text="@string/player_1"
+                android:textSize="18sp"
+                android:labelFor="@id/bonusPointsPlayer"
+                app:layout_constraintBottom_toBottomOf="@+id/decrementCallPlayer"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/decrementCallPlayer" />
+
+            <TextView
+                android:id="@+id/nameLabelPlayer2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:text="@string/player_2"
+                android:textSize="18sp"
+                android:labelFor="@id/bonusPointsPlayer2"
+                app:layout_constraintBottom_toBottomOf="@+id/decrementCallPlayer2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/decrementCallPlayer2" />
+
+            <TextView
+                android:id="@+id/nameLabelPlayer3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:text="@string/player_3"
+                android:textSize="18sp"
+                android:labelFor="@id/bonusPointsPlayer3"
+                app:layout_constraintBottom_toBottomOf="@+id/decrementCallPlayer3"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/decrementCallPlayer3" />
+
+            <TextView
+                android:id="@+id/nameLabelPlayer4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:text="@string/player_4"
+                android:textSize="18sp"
+                android:labelFor="@id/bonusPointsPlayer4"
+                app:layout_constraintBottom_toBottomOf="@+id/decrementCallPlayer4"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/decrementCallPlayer4" />
+
+            <TextView
+                android:id="@+id/nameLabelPlayer5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:text="@string/player_5"
+                android:textSize="18sp"
+                android:labelFor="@id/bonusPointsPlayer5"
+                app:layout_constraintBottom_toBottomOf="@+id/decrementCallPlayer5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/decrementCallPlayer5" />
+
+            <TextView
+                android:id="@+id/nameLabelPlayer6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:text="@string/player_6"
+                android:textSize="18sp"
+                android:labelFor="@id/bonusPointsPlayer6"
+                app:layout_constraintBottom_toBottomOf="@+id/decrementCallPlayer6"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/decrementCallPlayer6" />
+
+            <TextView
+                android:id="@+id/riskyZeroLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:text="@string/risky_zero"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toStartOf="@+id/decrementCallPlayer"
+                app:layout_constraintStart_toEndOf="@+id/pointsLabel"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/riskyChipPlayer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:checkable="true"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="@+id/riskyZeroLabel"
+                app:layout_constraintStart_toStartOf="@+id/riskyZeroLabel"
+                app:layout_constraintTop_toBottomOf="@+id/riskyZeroLabel"
+                tools:ignore="DuplicateSpeakableTextCheck" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/riskyChipPlayer2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:checkable="true"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="@+id/riskyChipPlayer"
+                app:layout_constraintHorizontal_bias="0.514"
+                app:layout_constraintStart_toStartOf="@+id/riskyChipPlayer"
+                app:layout_constraintTop_toBottomOf="@+id/riskyChipPlayer" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/riskyChipPlayer3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:checkable="true"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="@+id/riskyChipPlayer"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/riskyChipPlayer"
+                app:layout_constraintTop_toBottomOf="@+id/riskyChipPlayer2" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/riskyChipPlayer4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:checkable="true"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="@+id/riskyChipPlayer"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="@+id/riskyChipPlayer"
+                app:layout_constraintTop_toBottomOf="@+id/riskyChipPlayer3" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/riskyChipPlayer5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:checkable="true"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="@+id/riskyChipPlayer"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/riskyChipPlayer"
+                app:layout_constraintTop_toBottomOf="@+id/riskyChipPlayer4" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/riskyChipPlayer6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:checkable="true"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="@+id/riskyChipPlayer"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/riskyChipPlayer"
+                app:layout_constraintTop_toBottomOf="@id/riskyChipPlayer5" />
+
+            <TextView
+                android:id="@+id/pointsLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:text="@string/points"
+                android:textSize="18sp"
+                app:layout_constraintStart_toEndOf="@+id/roundView"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/pointsPlayer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/placeholderNumberString"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="@+id/nameLabelPlayer"
+                app:layout_constraintEnd_toEndOf="@+id/pointsLabel"
+                app:layout_constraintTop_toTopOf="@+id/nameLabelPlayer" />
+
+            <TextView
+                android:id="@+id/pointsPlayer2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/placeholderNumberString"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="@+id/nameLabelPlayer2"
+                app:layout_constraintEnd_toEndOf="@+id/pointsLabel"
+                app:layout_constraintTop_toTopOf="@+id/nameLabelPlayer2"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/pointsPlayer3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/placeholderNumberString"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="@id/nameLabelPlayer3"
+                app:layout_constraintEnd_toEndOf="@+id/pointsLabel"
+                app:layout_constraintTop_toTopOf="@id/nameLabelPlayer3"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/pointsPlayer4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/placeholderNumberString"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="@id/nameLabelPlayer4"
+                app:layout_constraintEnd_toEndOf="@+id/pointsLabel"
+                app:layout_constraintTop_toTopOf="@id/nameLabelPlayer4"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/pointsPlayer5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/placeholderNumberString"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="@id/nameLabelPlayer5"
+                app:layout_constraintEnd_toEndOf="@+id/pointsLabel"
+                app:layout_constraintTop_toTopOf="@id/nameLabelPlayer5"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/pointsPlayer6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/placeholderNumberString"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="@id/nameLabelPlayer6"
+                app:layout_constraintEnd_toEndOf="@+id/pointsLabel"
+                app:layout_constraintTop_toTopOf="@id/nameLabelPlayer6"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/callLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:labelFor="@id/callPlayer"
+                android:text="@string/calls"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="@+id/incrementCallPlayer"
+                app:layout_constraintStart_toStartOf="@+id/decrementCallPlayer"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/decrementCallPlayer"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="70dp"
+                android:enabled="false"
+                android:onClick="@{(view) -> gameActivity.changeCall(view,false)}"
+                android:text="@string/minus"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toStartOf="@+id/incrementCallPlayer"
+                app:layout_constraintTop_toBottomOf="@+id/callLabel"
+                tools:ignore="DuplicateSpeakableTextCheck" />
+
+            <Button
+                android:id="@+id/decrementCallPlayer2"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="70dp"
+                android:enabled="false"
+                android:onClick="@{(view) -> gameActivity.changeCall(view,false)}"
+                android:text="@string/minus"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toStartOf="@+id/incrementCallPlayer2"
+                app:layout_constraintTop_toBottomOf="@+id/decrementCallPlayer"
+                tools:ignore="DuplicateSpeakableTextCheck" />
+
+            <Button
+                android:id="@+id/decrementCallPlayer3"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="70dp"
+                android:enabled="false"
+                android:onClick="@{(view) -> gameActivity.changeCall(view,false)}"
+                android:text="@string/minus"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toStartOf="@+id/incrementCallPlayer3"
+                app:layout_constraintTop_toBottomOf="@+id/decrementCallPlayer2"
+                tools:ignore="DuplicateSpeakableTextCheck" />
+
+            <Button
+                android:id="@+id/decrementCallPlayer4"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="70dp"
+                android:enabled="false"
+                android:onClick="@{(view) -> gameActivity.changeCall(view,false)}"
+                android:text="@string/minus"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toStartOf="@+id/incrementCallPlayer4"
+                app:layout_constraintTop_toBottomOf="@+id/decrementCallPlayer3"
+                tools:ignore="DuplicateSpeakableTextCheck" />
+
+            <Button
+                android:id="@+id/decrementCallPlayer5"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="70dp"
+                android:enabled="false"
+                android:onClick="@{(view) -> gameActivity.changeCall(view,false)}"
+                android:text="@string/minus"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toStartOf="@+id/incrementCallPlayer5"
+                app:layout_constraintTop_toBottomOf="@+id/decrementCallPlayer4"
+                tools:ignore="DuplicateSpeakableTextCheck" />
+
+            <Button
+                android:id="@+id/decrementCallPlayer6"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="70dp"
+                android:enabled="false"
+                android:onClick="@{(view) -> gameActivity.changeCall(view,false)}"
+                android:text="@string/minus"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toStartOf="@+id/incrementCallPlayer6"
+                app:layout_constraintTop_toBottomOf="@+id/decrementCallPlayer5"
+                tools:ignore="DuplicateSpeakableTextCheck" />
+
+            <Button
+                android:id="@+id/incrementCallPlayer"
+                android:layout_width="48dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:onClick="@{(view) -> gameActivity.changeCall(view,true)}"
+                android:text="@string/plus"
+                app:layout_constraintBottom_toBottomOf="@+id/decrementCallPlayer"
+                app:layout_constraintEnd_toStartOf="@+id/decrementStitchesPlayer"
+                app:layout_constraintTop_toTopOf="@+id/decrementCallPlayer"
+                tools:ignore="DuplicateSpeakableTextCheck" />
+
+            <Button
+                android:id="@+id/incrementCallPlayer2"
+                android:layout_width="48dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:onClick="@{(view) -> gameActivity.changeCall(view,true)}"
+                android:text="@string/plus"
+                app:layout_constraintBottom_toBottomOf="@+id/decrementCallPlayer2"
+                app:layout_constraintEnd_toStartOf="@+id/decrementStitchesPlayer2"
+                app:layout_constraintTop_toTopOf="@+id/decrementCallPlayer2"
+                tools:ignore="DuplicateSpeakableTextCheck" />
+
+            <Button
+                android:id="@+id/incrementCallPlayer3"
+                android:layout_width="48dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:onClick="@{(view) -> gameActivity.changeCall(view,true)}"
+                android:text="@string/plus"
+                app:layout_constraintBottom_toBottomOf="@+id/decrementCallPlayer3"
+                app:layout_constraintEnd_toStartOf="@+id/decrementStitchesPlayer3"
+                app:layout_constraintTop_toTopOf="@+id/decrementCallPlayer3"
+                tools:ignore="DuplicateSpeakableTextCheck" />
+
+            <Button
+                android:id="@+id/incrementCallPlayer4"
+                android:layout_width="48dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:onClick="@{(view) -> gameActivity.changeCall(view,true)}"
+                android:text="@string/plus"
+                app:layout_constraintBottom_toBottomOf="@+id/decrementCallPlayer4"
+                app:layout_constraintEnd_toStartOf="@+id/decrementStitchesPlayer4"
+                app:layout_constraintTop_toTopOf="@+id/decrementCallPlayer4"
+                tools:ignore="DuplicateSpeakableTextCheck" />
+
+            <Button
+                android:id="@+id/incrementCallPlayer5"
+                android:layout_width="48dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:onClick="@{(view) -> gameActivity.changeCall(view,true)}"
+                android:text="@string/plus"
+                app:layout_constraintBottom_toBottomOf="@+id/decrementCallPlayer5"
+                app:layout_constraintEnd_toStartOf="@+id/decrementStitchesPlayer5"
+                app:layout_constraintTop_toTopOf="@+id/decrementCallPlayer5"
+                tools:ignore="DuplicateSpeakableTextCheck" />
+
+            <Button
+                android:id="@+id/incrementCallPlayer6"
+                android:layout_width="48dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:onClick="@{(view) -> gameActivity.changeCall(view,true)}"
+                android:text="@string/plus"
+                app:layout_constraintBottom_toBottomOf="@+id/decrementCallPlayer6"
+                app:layout_constraintEnd_toStartOf="@+id/decrementStitchesPlayer6"
+                app:layout_constraintTop_toTopOf="@+id/decrementCallPlayer6"
+                tools:ignore="DuplicateSpeakableTextCheck" />
+
+            <Button
+                android:id="@+id/decrementStitchesPlayer"
+                android:layout_width="48dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="70dp"
+                android:enabled="false"
+                android:onClick="@{(view) -> gameActivity.changeStitches(view,false)}"
+                android:text="@string/minus"
+                app:layout_constraintBottom_toBottomOf="@+id/incrementCallPlayer"
+                app:layout_constraintEnd_toStartOf="@+id/incrementStitchesPlayer"
+                app:layout_constraintTop_toTopOf="@+id/incrementCallPlayer" />
+
+            <Button
+                android:id="@+id/decrementStitchesPlayer2"
+                android:layout_width="48dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="70dp"
+                android:enabled="false"
+                android:onClick="@{(view) -> gameActivity.changeStitches(view,false)}"
+                android:text="@string/minus"
+                app:layout_constraintBottom_toBottomOf="@id/incrementCallPlayer2"
+                app:layout_constraintEnd_toStartOf="@+id/incrementStitchesPlayer2"
+                app:layout_constraintTop_toTopOf="@id/incrementCallPlayer2" />
+
+            <Button
+                android:id="@+id/decrementStitchesPlayer3"
+                android:layout_width="48dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="70dp"
+                android:enabled="false"
+                android:onClick="@{(view) -> gameActivity.changeStitches(view,false)}"
+                android:text="@string/minus"
+                app:layout_constraintBottom_toBottomOf="@id/incrementCallPlayer3"
+                app:layout_constraintEnd_toStartOf="@+id/incrementStitchesPlayer3"
+                app:layout_constraintTop_toTopOf="@id/incrementCallPlayer3" />
+
+            <Button
+                android:id="@+id/decrementStitchesPlayer4"
+                android:layout_width="48dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="70dp"
+                android:enabled="false"
+                android:onClick="@{(view) -> gameActivity.changeStitches(view,false)}"
+                android:text="@string/minus"
+                app:layout_constraintBottom_toBottomOf="@id/incrementCallPlayer4"
+                app:layout_constraintEnd_toStartOf="@+id/incrementStitchesPlayer4"
+                app:layout_constraintTop_toTopOf="@id/incrementCallPlayer4" />
+
+            <Button
+                android:id="@+id/decrementStitchesPlayer5"
+                android:layout_width="48dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="70dp"
+                android:enabled="false"
+                android:onClick="@{(view) -> gameActivity.changeStitches(view,false)}"
+                android:text="@string/minus"
+                app:layout_constraintBottom_toBottomOf="@id/incrementCallPlayer5"
+                app:layout_constraintEnd_toStartOf="@+id/incrementStitchesPlayer5"
+                app:layout_constraintTop_toTopOf="@id/incrementCallPlayer5" />
+
+            <Button
+                android:id="@+id/decrementStitchesPlayer6"
+                android:layout_width="48dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="70dp"
+                android:enabled="false"
+                android:onClick="@{(view) -> gameActivity.changeStitches(view,false)}"
+                android:text="@string/minus"
+                app:layout_constraintBottom_toBottomOf="@id/incrementCallPlayer6"
+                app:layout_constraintEnd_toStartOf="@+id/incrementStitchesPlayer6"
+                app:layout_constraintTop_toTopOf="@id/incrementCallPlayer6" />
+
+            <Button
+                android:id="@+id/incrementStitchesPlayer"
+                android:layout_width="48dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:enabled="false"
+                android:onClick="@{(view) -> gameActivity.changeStitches(view,true)}"
+                android:text="@string/plus"
+                app:layout_constraintBottom_toBottomOf="@id/decrementStitchesPlayer"
+                app:layout_constraintEnd_toStartOf="@+id/bonusPointsPlayer"
+                app:layout_constraintTop_toTopOf="@id/decrementStitchesPlayer" />
+
+            <Button
+                android:id="@+id/incrementStitchesPlayer2"
+                android:layout_width="48dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:enabled="false"
+                android:onClick="@{(view) -> gameActivity.changeStitches(view,true)}"
+                android:text="@string/plus"
+                app:layout_constraintBottom_toBottomOf="@id/decrementStitchesPlayer2"
+                app:layout_constraintEnd_toStartOf="@+id/bonusPointsPlayer2"
+                app:layout_constraintTop_toTopOf="@id/decrementStitchesPlayer2" />
+
+            <Button
+                android:id="@+id/incrementStitchesPlayer3"
+                android:layout_width="48dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:enabled="false"
+                android:onClick="@{(view) -> gameActivity.changeStitches(view,true)}"
+                android:text="@string/plus"
+                app:layout_constraintBottom_toBottomOf="@id/decrementStitchesPlayer3"
+                app:layout_constraintEnd_toStartOf="@+id/bonusPointsPlayer3"
+                app:layout_constraintTop_toTopOf="@id/decrementStitchesPlayer3" />
+
+            <Button
+                android:id="@+id/incrementStitchesPlayer4"
+                android:layout_width="48dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:enabled="false"
+                android:onClick="@{(view) -> gameActivity.changeStitches(view,true)}"
+                android:text="@string/plus"
+                app:layout_constraintBottom_toBottomOf="@id/decrementStitchesPlayer4"
+                app:layout_constraintEnd_toStartOf="@+id/bonusPointsPlayer4"
+                app:layout_constraintTop_toTopOf="@id/decrementStitchesPlayer4" />
+
+            <Button
+                android:id="@+id/incrementStitchesPlayer5"
+                android:layout_width="48dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:enabled="false"
+                android:onClick="@{(view) -> gameActivity.changeStitches(view,true)}"
+                android:text="@string/plus"
+                app:layout_constraintBottom_toBottomOf="@id/decrementStitchesPlayer5"
+                app:layout_constraintEnd_toStartOf="@+id/bonusPointsPlayer5"
+                app:layout_constraintTop_toTopOf="@id/decrementStitchesPlayer5" />
+
+            <Button
+                android:id="@+id/incrementStitchesPlayer6"
+                android:layout_width="48dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:enabled="false"
+                android:onClick="@{(view) -> gameActivity.changeStitches(view,true)}"
+                android:text="@string/plus"
+                app:layout_constraintBottom_toBottomOf="@id/decrementStitchesPlayer6"
+                app:layout_constraintEnd_toStartOf="@+id/bonusPointsPlayer6"
+                app:layout_constraintTop_toTopOf="@id/decrementStitchesPlayer6" />
+
+            <TextView
+                android:id="@+id/stitchesLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:text="@string/stitches"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="@+id/incrementStitchesPlayer"
+                app:layout_constraintStart_toStartOf="@+id/decrementStitchesPlayer"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/confirmCallsButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:layout_marginBottom="16dp"
+                android:onClick="@{() -> gameActivity.confirmCalls()}"
+                android:text="@string/confirm_calls"
+                android:textAlignment="gravity"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/incrementCallPlayer3"
+                app:layout_constraintStart_toStartOf="@+id/decrementCallPlayer3"
+                app:layout_constraintTop_toBottomOf="@+id/incrementCallPlayer6" />
+
+            <Button
+                android:id="@+id/confirmStitchesButton"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:enabled="false"
+                android:text="@string/confirm_stitches"
+                android:textSize="18sp"
+                android:onClick="@{() -> gameActivity.nextRound()}"
+                app:layout_constraintBottom_toBottomOf="@+id/confirmCallsButton"
+                app:layout_constraintEnd_toEndOf="@+id/bonusPointsPlayer3"
+                app:layout_constraintStart_toStartOf="@+id/decrementStitchesPlayer3"
+                app:layout_constraintTop_toTopOf="@+id/confirmCallsButton" />
+
+            <Button
+                android:id="@+id/shoeOverviewButton"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginEnd="24dp"
+                android:text="@string/show_overview"
+                android:textSize="18sp"
+                android:onClick="@{() -> gameActivity.showOverview(false)}"
+                app:layout_constraintBottom_toBottomOf="@+id/confirmCallsButton"
+                app:layout_constraintEnd_toStartOf="@+id/confirmCallsButton"
+                app:layout_constraintStart_toStartOf="@+id/nameLabelPlayer3"
+                app:layout_constraintTop_toTopOf="@+id/confirmCallsButton" />
+
+            <TextView
+                android:id="@+id/callPlayer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/placeholderNumberString"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="@+id/pointsPlayer"
+                app:layout_constraintEnd_toStartOf="@+id/incrementCallPlayer"
+                app:layout_constraintStart_toEndOf="@+id/decrementCallPlayer"
+                app:layout_constraintTop_toTopOf="@+id/pointsPlayer" />
+
+            <TextView
+                android:id="@+id/callPlayer2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/placeholderNumberString"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="@id/pointsPlayer2"
+                app:layout_constraintEnd_toStartOf="@+id/incrementCallPlayer"
+                app:layout_constraintStart_toEndOf="@+id/decrementCallPlayer"
+                app:layout_constraintTop_toTopOf="@id/pointsPlayer2" />
+
+            <TextView
+                android:id="@+id/callPlayer3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/placeholderNumberString"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="@id/pointsPlayer3"
+                app:layout_constraintEnd_toStartOf="@+id/incrementCallPlayer"
+                app:layout_constraintStart_toEndOf="@+id/decrementCallPlayer"
+                app:layout_constraintTop_toTopOf="@id/pointsPlayer3" />
+
+            <TextView
+                android:id="@+id/callPlayer4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/placeholderNumberString"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="@id/pointsPlayer4"
+                app:layout_constraintEnd_toStartOf="@+id/incrementCallPlayer"
+                app:layout_constraintStart_toEndOf="@+id/decrementCallPlayer"
+                app:layout_constraintTop_toTopOf="@id/pointsPlayer4" />
+
+            <TextView
+                android:id="@+id/callPlayer5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/placeholderNumberString"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="@id/pointsPlayer5"
+                app:layout_constraintEnd_toStartOf="@+id/incrementCallPlayer"
+                app:layout_constraintStart_toEndOf="@+id/decrementCallPlayer"
+                app:layout_constraintTop_toTopOf="@id/pointsPlayer5" />
+
+            <TextView
+                android:id="@+id/callPlayer6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/placeholderNumberString"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="@id/pointsPlayer6"
+                app:layout_constraintEnd_toStartOf="@+id/incrementCallPlayer"
+                app:layout_constraintStart_toEndOf="@+id/decrementCallPlayer"
+                app:layout_constraintTop_toTopOf="@id/pointsPlayer6" />
+
+            <TextView
+                android:id="@+id/stitchesPlayer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/placeholderNumberString"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="@+id/callPlayer"
+                app:layout_constraintEnd_toStartOf="@+id/incrementStitchesPlayer"
+                app:layout_constraintStart_toEndOf="@+id/decrementStitchesPlayer"
+                app:layout_constraintTop_toTopOf="@+id/callPlayer" />
+
+            <TextView
+                android:id="@+id/stitchesPlayer2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/placeholderNumberString"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="@id/callPlayer2"
+                app:layout_constraintEnd_toStartOf="@+id/incrementStitchesPlayer"
+                app:layout_constraintStart_toEndOf="@+id/decrementStitchesPlayer"
+                app:layout_constraintTop_toTopOf="@id/callPlayer2" />
+
+            <TextView
+                android:id="@+id/stitchesPlayer3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/placeholderNumberString"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="@id/callPlayer3"
+                app:layout_constraintEnd_toStartOf="@+id/incrementStitchesPlayer"
+                app:layout_constraintStart_toEndOf="@+id/decrementStitchesPlayer"
+                app:layout_constraintTop_toTopOf="@id/callPlayer3" />
+
+            <TextView
+                android:id="@+id/stitchesPlayer4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/placeholderNumberString"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="@id/callPlayer4"
+                app:layout_constraintEnd_toStartOf="@+id/incrementStitchesPlayer"
+                app:layout_constraintStart_toEndOf="@+id/decrementStitchesPlayer"
+                app:layout_constraintTop_toTopOf="@id/callPlayer4" />
+
+            <TextView
+                android:id="@+id/stitchesPlayer5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/placeholderNumberString"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="@id/callPlayer5"
+                app:layout_constraintEnd_toStartOf="@+id/incrementStitchesPlayer"
+                app:layout_constraintStart_toEndOf="@+id/decrementStitchesPlayer"
+                app:layout_constraintTop_toTopOf="@id/callPlayer5" />
+
+            <TextView
+                android:id="@+id/stitchesPlayer6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/placeholderNumberString"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="@id/callPlayer6"
+                app:layout_constraintEnd_toStartOf="@+id/incrementStitchesPlayer"
+                app:layout_constraintStart_toEndOf="@+id/decrementStitchesPlayer"
+                app:layout_constraintTop_toTopOf="@id/callPlayer6" />
+
+            <EditText
+                android:id="@+id/bonusPointsPlayer"
+                android:layout_width="48dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="48dp"
+                android:ems="10"
+                android:enabled="false"
+                android:inputType="number"
+                android:minHeight="48dp"
+                android:text="@string/placeholderNumberString"
+                android:textAlignment="viewEnd"
+                app:layout_constraintBottom_toBottomOf="@+id/incrementStitchesPlayer"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/incrementStitchesPlayer"
+                tools:ignore="DuplicateSpeakableTextCheck"
+                android:importantForAutofill="no" />
+
+            <EditText
+                android:id="@+id/bonusPointsPlayer2"
+                android:layout_width="48dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="48dp"
+                android:ems="10"
+                android:enabled="false"
+                android:importantForAutofill="no"
+                android:inputType="number"
+                android:minHeight="48dp"
+                android:text="@string/placeholderNumberString"
+                android:textAlignment="viewEnd"
+                app:layout_constraintBottom_toBottomOf="@id/incrementStitchesPlayer2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/incrementStitchesPlayer2"
+                tools:ignore="DuplicateSpeakableTextCheck" />
+
+            <EditText
+                android:id="@+id/bonusPointsPlayer3"
+                android:layout_width="48dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="48dp"
+                android:ems="10"
+                android:enabled="false"
+                android:importantForAutofill="no"
+                android:inputType="number"
+                android:minHeight="48dp"
+                android:text="@string/placeholderNumberString"
+                android:textAlignment="viewEnd"
+                app:layout_constraintBottom_toBottomOf="@id/incrementStitchesPlayer3"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/incrementStitchesPlayer3"
+                tools:ignore="DuplicateSpeakableTextCheck" />
+
+            <EditText
+                android:id="@+id/bonusPointsPlayer4"
+                android:layout_width="48dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="48dp"
+                android:ems="10"
+                android:enabled="false"
+                android:importantForAutofill="no"
+                android:inputType="number"
+                android:minHeight="48dp"
+                android:text="@string/placeholderNumberString"
+                android:textAlignment="viewEnd"
+                app:layout_constraintBottom_toBottomOf="@id/incrementStitchesPlayer4"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/incrementStitchesPlayer4"
+                tools:ignore="DuplicateSpeakableTextCheck" />
+
+            <EditText
+                android:id="@+id/bonusPointsPlayer5"
+                android:layout_width="48dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="48dp"
+                android:ems="10"
+                android:enabled="false"
+                android:importantForAutofill="no"
+                android:inputType="number"
+                android:minHeight="48dp"
+                android:text="@string/placeholderNumberString"
+                android:textAlignment="viewEnd"
+                app:layout_constraintBottom_toBottomOf="@id/incrementStitchesPlayer5"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/incrementStitchesPlayer5"
+                tools:ignore="DuplicateSpeakableTextCheck" />
+
+            <EditText
+                android:id="@+id/bonusPointsPlayer6"
+                android:layout_width="48dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="48dp"
+                android:ems="10"
+                android:enabled="false"
+                android:importantForAutofill="no"
+                android:inputType="number"
+                android:text="@string/placeholderNumberString"
+                android:textAlignment="viewEnd"
+                app:layout_constraintBottom_toBottomOf="@id/incrementStitchesPlayer6"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/incrementStitchesPlayer6"
+                tools:ignore="DuplicateSpeakableTextCheck" />
+
+            <TextView
+                android:id="@+id/bonusPointsLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/bonus"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="@+id/bonusPointsPlayer"
+                app:layout_constraintStart_toStartOf="@+id/bonusPointsPlayer"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/roundView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="16dp"
+                android:text="@string/roundCounter"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+</layout>

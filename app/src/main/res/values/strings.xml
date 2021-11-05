@@ -1,0 +1,42 @@
+<resources>
+    <string name="app_name">SkullKingBlock</string>
+
+    // strings for SetPlayersActivity
+    <string name="playercount_query">How many Players are at the table?</string>
+    <string name="start_game">Start</string>
+    <string name="minus">-</string>
+    <string name="plus">+</string>
+    <string name="next">Next</string>
+    <string name="extra_rules">Extra Rules:</string>
+    <string name="risky_zero">Risky Zero</string>
+    <string name="points">Points</string>
+    <string name="calls">Calls</string>
+
+    <string name="placeholderNumberString">0</string>
+
+    <string name="player_1">Player 1</string>
+    <string name="player_2">Player 2</string>
+    <string name="player_3">Player 3</string>
+    <string name="player_4">Player 4</string>
+    <string name="player_5">Player 5</string>
+    <string name="player_6">Player 6</string>
+
+    <string name="title_activity_test">Test</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="title_activity_game2">GameActivity2</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="stitches">Stitches</string>
+    <string name="confirm_calls">Confirm Calls</string>
+    <string name="confirm_stitches">Confirm Stitches</string>
+    <string name="show_overview">Show Overview</string>
+    <string name="bonus">Bonus</string>
+    <string name="roundCounter">"Round: "</string>
+
+</resources>
