@@ -246,8 +246,9 @@ public class GameActivity extends AppCompatActivity {
             view.setEnabled(false);
             view = findViewById(Constants.incrementStitchesButtons[i]);
             view.setEnabled(false);
-            view = findViewById(Constants.bonusPointViews[i]);
-            view.setEnabled(false);
+            EditText viewb = findViewById(Constants.bonusPointViews[i]);
+            viewb.setText(R.string.placeholderNumberString);
+            viewb.setEnabled(false);
 
             // Enable call elements
             view = findViewById(Constants.incrementCallButtons[i]);
