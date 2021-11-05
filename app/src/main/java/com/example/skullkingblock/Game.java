@@ -78,6 +78,7 @@ public class Game {
             int i = 0;
             pointTable[i][this.round-1] = player.getCall() + "|" + player.getPoints();
             player.resetPlayer();
+            i++;
         }
         this.round++;
     }
