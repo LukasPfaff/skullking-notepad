@@ -13,6 +13,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.example.skullkingblock.databinding.ActivityGameBinding;
+import com.google.android.material.chip.Chip;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -202,8 +203,12 @@ public class GameActivity extends AppCompatActivity {
             // Enable stitches elements
             view = findViewById(Constants.incrementStitchesButtons[i]);
             view.setEnabled(true);
-            view = findViewById(Constants.bonusPointViews[i]);
-            view.setEnabled(true);
+
+            // Only enable bonus if player called stitches
+            if(call!=0) {
+                view = findViewById(Constants.bonusPointViews[i]);
+                view.setEnabled(true);
+            }
         }
         View view = findViewById(R.id.confirmCallsButton);
         view.setEnabled(false);
@@ -228,6 +233,16 @@ public class GameActivity extends AppCompatActivity {
         // prepare going to next round
         int players = game.getPlayerNumber();
         for(int i = 0; i < players; i++){
+            // get risky zero state
+            int j = i+1;
+            Chip chip = findViewById(Constants.riskyElements[j]);
+            if(chip.isChecked()){
+                game.getPlayers()[i].setRiskyZero(true);
+                game.getPlayers()[i].setWasRiskyZeroUsed(true);
+                chip.setChecked(false);
+                chip.setEnabled(false);
+            }
+
             View view;
             // save the points
             TextView stitchesView = findViewById(Constants.stitchesViews[i]);
@@ -259,6 +274,13 @@ public class GameActivity extends AppCompatActivity {
             tview.setText(getString(R.string.placeholderNumberString));
             tview = findViewById(Constants.stitchesViews[i]);
             tview.setText(getString(R.string.placeholderNumberString));
+
+            // enable risky elements
+            if (game.getRound() > 3){
+                if (!game.getPlayers()[i].getWasRiskyZeroUsed()){
+                    chip.setEnabled(true);
+                }
+            }
         }
         View view = findViewById(R.id.confirmStitchesButton);
         view.setEnabled(false);

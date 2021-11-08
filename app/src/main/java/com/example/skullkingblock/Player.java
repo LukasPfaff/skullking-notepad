@@ -42,7 +42,6 @@ public class Player {
         this.name = newName;
     }
 
-    //TODO: currently use bonus to handle risky zero games. Remove, after risky zero is implemented
     /**
      * Calculate the players points using his other attributes, the current round number and the
      * bonus points
@@ -53,10 +52,10 @@ public class Player {
         if(this.call == 0){
             int pointChange = this.riskyZero ? ((round * 10) + 50) : (round * 10);
             if(this.stitches == 0){
-                this.points = this.points + (pointChange + bonus);
+                this.points = this.points + pointChange;
             }
             else {
-                this.points = this.points - (pointChange + bonus);
+                this.points = this.points - pointChange;
             }
         }
         else{
@@ -77,9 +76,6 @@ public class Player {
     public void resetPlayer(){
         this.call = 0;
         this.stitches = 0;
-        if(this.riskyZero){
-            wasRiskyZeroUsed = true;
-        }
         this.riskyZero = false;
     }
 
@@ -121,5 +117,21 @@ public class Player {
      */
     public int getCall(){
         return this.call;
+    }
+
+    /**
+     * return whether risky zero was already used this game.
+     * @return whether risky Zero was used
+     */
+    public boolean getWasRiskyZeroUsed(){
+        return  this.wasRiskyZeroUsed;
+    }
+
+    /**
+     * set whether the risky zero was used
+     * @param b risky zero used
+     */
+    public void setWasRiskyZeroUsed(boolean b){
+        this.wasRiskyZeroUsed = b;
     }
 }
